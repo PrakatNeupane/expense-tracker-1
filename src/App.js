@@ -1,5 +1,6 @@
 import React from 'react'; // You can simply import this in all the files with JSX code just so that you remember what happens behind the hood 
 import { Expenses } from './components/Expenses/Expenses';
+import { NewExpense } from './components/NewExpense/NewExpense';
 
 const App = () => {
 
@@ -37,7 +38,11 @@ const App = () => {
   ]
 
   return (
-    <Expenses expenses={expenses} />
+    <div>
+      <NewExpense />
+      <Expenses items={expenses} />
+    </div>
+
   )
 }
 export default App;
