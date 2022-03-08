@@ -2,19 +2,38 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 export const ExpenseForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState();
-  const [enteredAmount, setEnteredAmount] = useState();
-  const [enteredDate, setEnteredDate] = useState();
+  // const [enteredTitle, setEnteredTitle] = useState();
+  // const [enteredAmount, setEnteredAmount] = useState();
+  // const [enteredDate, setEnteredDate] = useState();
+
+  const [userInput, setUserInput] = useState(
+    {
+      enteredTitle: '',
+      enteredAmount: '',
+      enteredDate: '',
+    }
+  )
+
+  // when your state update depends on your previous state, you need to use useState function with prevstate parameter and then make changes
 
   const titleChangeHandler = (e) => {
-    setEnteredTitle(e.target.value);
+    setUserInput((prevstate) => { return { ...userInput, enteredTitle: e.target.event, } }
+    )
   }
   const amountChangeHandler = (e) => {
-    setEnteredAmount(e.target.value);
+    setUserInput({
+      ...userInput,
+      enteredAmount: e.target.event,
+    })
   }
   const dateChangeHandler = (e) => {
-    setEnteredDate(e.target.value);
+    setUserInput({
+      ...userInput,
+      enteredDate: e.target.event,
+    })
   }
+
+
 
   return (
     <form>
