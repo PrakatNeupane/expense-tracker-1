@@ -23,7 +23,7 @@ const DUMMY_EXPENSES = [
   {
     id: 'e4',
     title: 'food insurance',
-    date: new Date('2022/1/2'),
+    date: new Date('2020/1/2'),
     amount: 450,
   },
 
